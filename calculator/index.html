@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculateur de puissance éolienne</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjs@14.3.0/lib/browser/math.min.js"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Calculateur de puissance éolienne</h1>
+        <p class="header-subtitle">
+          Calculez et visualisez la puissance électrique générée par les
+          éoliennes
+        </p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="grid-container">
+        <div>
+          <div class="card l-1">
+            <h2>Paramètres d'entrée</h2>
+            <div class="form-grid">
+              <div class="input-group">
+                <label for="airDensity">Densité de l'air (kg/m³)</label>
+                <input
+                  type="number"
+                  id="airDensity"
+                  value="1.225"
+                  min="0.5"
+                  max="2"
+                  step="0.001"
+                />
+              </div>
+              <div class="input-group">
+                <label for="bladeLength">Longueur de pale (m)</label>
+                <input
+                  type="number"
+                  id="bladeLength"
+                  value="30"
+                  min="1"
+                  max="100"
+                  step="0.1"
+                />
+              </div>
+              <div class="input-group">
+                <label for="windSpeed">Vitesse du vent (m/s)</label>
+                <input
+                  type="number"
+                  id="windSpeed"
+                  value="8"
+                  min="0"
+                  max="50"
+                  step="0.1"
+                />
+              </div>
+              <div class="input-group">
+                <label for="efficiencyFactor">Facteur d'efficacité (Cp)</label>
+                <input
+                  type="number"
+                  id="efficiencyFactor"
+                  value="0.4"
+                  min="0"
+                  max="0.59"
+                  step="0.01"
+                />
+                <div id="efficiencyWarning" class="efficiency-warning">
+                  La limite de Betz est 0.593. Valeur trop élevée !
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="cutInSpeed"
+                  >Vitesse de démarrage minimale (m/s)</label
+                >
+                <input
+                  type="number"
+                  id="cutInSpeed"
+                  value="3"
+                  min="0"
+                  max="10"
+                  step="0.1"
+                />
+              </div>
+              <div class="input-group">
+                <label for="cutOutSpeed">Vitesse maximale d'arrêt (m/s)</label>
+                <input
+                  type="number"
+                  id="cutOutSpeed"
+                  value="25"
+                  min="10"
+                  max="40"
+                  step="0.1"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="card l-2">
+            <h2>Spécifications de l'éolienne</h2>
+            <div class="result-group">
+              <h3>Diamètre de pale</h3>
+              <div class="formula-container" id="diameterFormula"></div>
+              <div class="result-value" id="bladeDiameter">0 m</div>
+            </div>
+            <div class="result-group">
+              <h3>Surface balayée</h3>
+              <div class="formula-container" id="areaFormula"></div>
+              <div class="result-value" id="sweptArea">0 m²</div>
+            </div>
+          </div>
+
+          <div class="card l-3">
+            <h2>Calculs d'écoulement de l'air</h2>
+            <div class="result-group">
+              <h3>Volume d'air par seconde</h3>
+              <div class="formula-container" id="volumeFormula"></div>
+              <div class="result-value" id="airVolume">0 m³/s</div>
+            </div>
+            <div class="result-group">
+              <h3>Masse d'air par seconde</h3>
+              <div class="formula-container" id="massFormula"></div>
+              <div class="result-value" id="airMass">0 kg/s</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card r-1">
+            <h2>Puissance électrique</h2>
+            <div class="wind-state" id="windState"></div>
+            <div class="result-group">
+              <h3>Puissance théorique du vent</h3>
+              <div class="formula-container" id="powerTheoryFormula"></div>
+              <div class="result-value" id="powerTheory">0 W</div>
+            </div>
+            <div class="result-group">
+              <h3>Puissance électrique produite</h3>
+              <div class="formula-container" id="powerOutputFormula"></div>
+              <div class="result-value" id="powerOutput">0 W</div>
+            </div>
+          </div>
+
+          <div class="card r-2">
+            <h2>Courbe de puissance</h2>
+            <canvas id="powerCurveChart"></canvas>
+          </div>
+
+          <div class="card info-box r-3">
+            <h3>À propos de la puissance éolienne</h3>
+            <ul>
+              <li>
+                <strong>Loi du cube</strong>: La puissance est proportionnelle
+                au cube de la vitesse du vent, ce qui signifie que de petites
+                augmentations de la vitesse du vent produisent de grandes
+                augmentations de la puissance.
+              </li>
+              <li>
+                <strong>Limite de Betz</strong>: L'efficacité théorique maximale
+                pour extraire l'énergie du vent est de 59,3% (la limite de
+                Betz).
+              </li>
+              <li>
+                <strong>Vitesse de démarrage</strong>: La vitesse minimale du
+                vent à laquelle l'éolienne commence à produire de la puissance.
+              </li>
+              <li>
+                <strong>Vitesse d'arrêt</strong>: La vitesse du vent à laquelle
+                l'éolienne s'arrête pour éviter les dommages.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Calculateur de puissance éolienne © 2025</p>
+      </div>
+    </footer>
+  </body>
+</html>
