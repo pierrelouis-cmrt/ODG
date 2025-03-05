@@ -13,18 +13,18 @@ window.MathJax = {
   },
 };
 
-// Initialize charts
+// Initialize chart variable
 let powerCurveChart;
 
-// Wait for DOM to be ready
 document.addEventListener("DOMContentLoaded", function () {
-  // Get input elements
+  // Get input elements (all as text inputs)
   const airDensityInput = document.getElementById("airDensity");
   const bladeLengthInput = document.getElementById("bladeLength");
   const windSpeedInput = document.getElementById("windSpeed");
   const efficiencyFactorInput = document.getElementById("efficiencyFactor");
   const cutInSpeedInput = document.getElementById("cutInSpeed");
   const cutOutSpeedInput = document.getElementById("cutOutSpeed");
+  const ratedSpeedInput = document.getElementById("ratedSpeed");
 
   // Get output elements
   const bladeDiameterOutput = document.getElementById("bladeDiameter");
@@ -49,44 +49,44 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize charts
   initCharts();
 
-  // Set up event listeners for inputs
+  // Set up event listeners for text inputs
   airDensityInput.addEventListener("input", updateCalculations);
   bladeLengthInput.addEventListener("input", updateCalculations);
   windSpeedInput.addEventListener("input", updateCalculations);
   efficiencyFactorInput.addEventListener("input", updateCalculations);
   cutInSpeedInput.addEventListener("input", updateCalculations);
   cutOutSpeedInput.addEventListener("input", updateCalculations);
+  ratedSpeedInput.addEventListener("input", updateCalculations);
 
-  // Initial calculation
+  // Run initial calculations
   updateCalculations();
 
-  // Helper function to replace decimal dots by commas in number strings
+  // Helper function: formats a number with fixed decimals and replaces dot by comma
   function fmt(num, decimals) {
     return num.toFixed(decimals).replace(".", ",");
   }
 
-  // Function to update all calculations
+  // Update all calculations based on the text input values
   function updateCalculations() {
-    // Get input values
+    // Retrieve numerical values from inputs
     const airDensity = parseFloat(airDensityInput.value);
     const bladeLength = parseFloat(bladeLengthInput.value);
     const windSpeed = parseFloat(windSpeedInput.value);
     const efficiencyFactor = parseFloat(efficiencyFactorInput.value);
     const cutInSpeed = parseFloat(cutInSpeedInput.value);
     const cutOutSpeed = parseFloat(cutOutSpeedInput.value);
+    const ratedWindSpeed = parseFloat(ratedSpeedInput.value);
 
-    // Check for Betz limit
+    // Betz limit check (efficiency should not exceed 0.593)
     if (efficiencyFactor > 0.593) {
       efficiencyWarning.style.display = "block";
     } else {
       efficiencyWarning.style.display = "none";
     }
 
-    // Calculate blade diameter
+    // Blade diameter calculation
     const bladeDiameter = 2 * bladeLength;
     bladeDiameterOutput.textContent = fmt(bladeDiameter, 2) + " m";
-
-    // Update diameter formula (using L for longueur de pale)
     diameterFormulaContainer.innerHTML =
       "$$D = 2 \\times L = 2 \\times " +
       fmt(bladeLength, 2) +
@@ -94,11 +94,9 @@ document.addEventListener("DOMContentLoaded", function () {
       fmt(bladeDiameter, 2) +
       "\\ \\text{m}$$";
 
-    // Calculate swept area
+    // Swept area calculation
     const sweptArea = Math.PI * Math.pow(bladeLength, 2);
     sweptAreaOutput.textContent = fmt(sweptArea, 2) + " m²";
-
-    // Update area formula (using L instead of r)
     areaFormulaContainer.innerHTML =
       "$$A = \\pi \\times L^2 = \\pi \\times " +
       fmt(bladeLength, 2) +
@@ -106,11 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
       fmt(sweptArea, 2) +
       "\\ \\text{m}^2$$";
 
-    // Calculate volume of air per second
+    // Air volume per second calculation
     const airVolume = sweptArea * windSpeed;
     airVolumeOutput.textContent = fmt(airVolume, 2) + " m³/s";
-
-    // Update volume formula
     volumeFormulaContainer.innerHTML =
       "$$V = A \\times v = " +
       fmt(sweptArea, 2) +
@@ -120,11 +116,9 @@ document.addEventListener("DOMContentLoaded", function () {
       fmt(airVolume, 2) +
       "\\ \\text{m}^3/\\text{s}$$";
 
-    // Calculate mass of air per second
+    // Air mass per second calculation
     const airMass = airDensity * airVolume;
     airMassOutput.textContent = fmt(airMass, 2) + " kg/s";
-
-    // Update mass formula
     massFormulaContainer.innerHTML =
       "$$m = \\rho \\times V = " +
       fmt(airDensity, 3) +
@@ -134,11 +128,9 @@ document.addEventListener("DOMContentLoaded", function () {
       fmt(airMass, 2) +
       "\\ \\text{kg/s}$$";
 
-    // Calculate theoretical power in wind
+    // Theoretical wind power calculation
     const powerTheory = 0.5 * airMass * Math.pow(windSpeed, 2);
     powerTheoryOutput.textContent = formatPower(powerTheory);
-
-    // Update power theory formula
     powerTheoryFormulaContainer.innerHTML =
       "$$P_{\\mathrm{th}} = \\frac{1}{2} \\times m \\times v^2 = 0,5 \\times " +
       fmt(airMass, 2) +
@@ -148,66 +140,91 @@ document.addEventListener("DOMContentLoaded", function () {
       fmt(powerTheory, 2) +
       "\\ \\text{W}$$";
 
-    // Calculate actual power output based on efficiency and wind speed constraints
+    // Determine actual power output based on wind speed constraints
     let powerOutput = 0;
     let windState = "";
 
     if (windSpeed < cutInSpeed) {
       windState =
-        "<div class='wind-state too-slow'>Statut: <b>Non opérationnelle</b> <span class='wind-speed-badge too-slow'>• Vent trop faible</span></div>";
+        "<div class='wind-state too-slow'>Statut: <b>Non opérationnelle</b> " +
+        "<span class='wind-speed-badge too-slow'>• Vent trop faible</span></div>";
       powerOutput = 0;
     } else if (windSpeed > cutOutSpeed) {
       windState =
-        "<div class='wind-state too-fast'>Statut: <b>Arrêt d'urgence</b> <span class='wind-speed-badge too-fast'>• Vent trop fort</span></div>";
+        "<div class='wind-state too-fast'>Statut: <b>Arrêt d'urgence</b> " +
+        "<span class='wind-speed-badge too-fast'>• Vent trop fort</span></div>";
       powerOutput = 0;
     } else {
       windState =
-        "<div class='wind-state operational'>Statut: <b>En fonctionnement</b> <span class='wind-speed-badge operational'>• Conditions optimales</span></div>";
-      powerOutput = powerTheory * efficiencyFactor;
+        "<div class='wind-state operational'>Statut: <b>En fonctionnement</b> " +
+        "<span class='wind-speed-badge operational'>• Conditions optimales</span></div>";
+
+      if (windSpeed >= cutInSpeed && windSpeed < ratedWindSpeed) {
+        // Compute normalized value (0 to 1)
+        let x = (windSpeed - cutInSpeed) / (ratedWindSpeed - cutInSpeed);
+        // Theoretical power at rated wind speed
+        const ratedTheoreticalPower =
+          0.5 * airDensity * sweptArea * Math.pow(ratedWindSpeed, 3);
+        // S-curve interpolation (smooth start)
+        powerOutput =
+          ratedTheoreticalPower *
+          (3 * Math.pow(x, 2) - 2 * Math.pow(x, 3)) *
+          efficiencyFactor;
+      } else if (windSpeed >= ratedWindSpeed && windSpeed <= cutOutSpeed) {
+        const ratedTheoreticalPower =
+          0.5 * airDensity * sweptArea * Math.pow(ratedWindSpeed, 3);
+        powerOutput = ratedTheoreticalPower * efficiencyFactor;
+      }
     }
 
     windStateOutput.innerHTML = windState;
     powerOutputOutput.textContent = formatPower(powerOutput);
 
-    // Update power output formula
     if (powerOutput > 0) {
-      powerOutputFormulaContainer.innerHTML =
-        "$$P_{\\mathrm{élec}} = P_{\\mathrm{th}} \\times C_p = " +
-        fmt(powerTheory, 2) +
-        " \\times " +
-        fmt(efficiencyFactor, 2) +
-        " = " +
-        fmt(powerOutput, 2) +
-        "\\ \\text{W}$$";
+      if (windSpeed >= ratedWindSpeed) {
+        powerOutputFormulaContainer.innerHTML =
+          "$$P_{\\mathrm{élec}} = P_{\\mathrm{rated}} = " +
+          fmt(powerOutput, 2) +
+          "\\ \\text{W (Puissance nominale)}$$";
+      } else {
+        powerOutputFormulaContainer.innerHTML =
+          "$$P_{\\mathrm{élec}} = P_{\\mathrm{th}} \\times C_p = " +
+          fmt(powerTheory, 2) +
+          " \\times " +
+          fmt(efficiencyFactor, 2) +
+          " = " +
+          fmt(powerOutput, 2) +
+          "\\ \\text{W}$$";
+      }
     } else {
       powerOutputFormulaContainer.innerHTML =
-        "$$P_{\\mathrm{élec}} = 0 \\ \\text{W (Eolienne non opérationnelle)}$$";
+        "$$P_{\\mathrm{élec}} = 0 \\ \\text{W (Éolienne non opérationnelle)}$$";
     }
 
-    // Update charts
+    // Update charts, passing the rated wind speed from the text input
     updateCharts(
       cutInSpeed,
       cutOutSpeed,
+      ratedWindSpeed,
       efficiencyFactor,
       airDensity,
       bladeLength
     );
 
-    // Typeset the math formulas
+    // Render math formulas via MathJax
     if (MathJax && MathJax.typesetPromise) {
       MathJax.typesetPromise();
-    } else if (window.MathJax) {
-      window.MathJax.typesetPromise && window.MathJax.typesetPromise();
+    } else if (window.MathJax && window.MathJax.typesetPromise) {
+      window.MathJax.typesetPromise();
     }
   }
 
-  // Function to initialize charts
+  // Initialize the power curve chart
   function initCharts() {
     const powerCurveCtx = document
       .getElementById("powerCurveChart")
       .getContext("2d");
 
-    // Initialize power curve chart
     powerCurveChart = new Chart(powerCurveCtx, {
       type: "line",
       data: {
@@ -247,42 +264,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function to update charts
+  // Update the power curve chart based on current inputs
   function updateCharts(
     cutInSpeed,
     cutOutSpeed,
+    ratedWindSpeed,
     efficiencyFactor,
     airDensity,
     bladeLength
   ) {
-    // Generate wind speed range for power curve (0-30 m/s)
+    // Create an array for wind speeds 0 to 30 m/s
     const windSpeeds = Array.from({ length: 31 }, (_, i) => i);
     const sweptArea = Math.PI * Math.pow(bladeLength, 2);
 
-    // Calculate power for each wind speed
+    // Compute the rated power (in kW) using the rated wind speed
+    const powerRated =
+      (0.5 *
+        airDensity *
+        sweptArea *
+        Math.pow(ratedWindSpeed, 3) *
+        efficiencyFactor) /
+      1000;
+
+    // Determine power output for each wind speed using a piecewise function
     const powerOutputs = windSpeeds.map((speed) => {
-      if (speed < cutInSpeed || speed > cutOutSpeed) {
+      if (speed < cutInSpeed) {
         return 0;
+      } else if (speed >= cutInSpeed && speed < ratedWindSpeed) {
+        let x = (speed - cutInSpeed) / (ratedWindSpeed - cutInSpeed);
+        return powerRated * (3 * Math.pow(x, 2) - 2 * Math.pow(x, 3));
+      } else if (speed >= ratedWindSpeed && speed <= cutOutSpeed) {
+        return powerRated;
       } else {
-        // Power in kW
-        const power =
-          (0.5 *
-            airDensity *
-            sweptArea *
-            Math.pow(speed, 3) *
-            efficiencyFactor) /
-          1000;
-        return power;
+        return 0;
       }
     });
 
-    // Update power curve chart
     powerCurveChart.data.labels = windSpeeds;
     powerCurveChart.data.datasets[0].data = powerOutputs;
     powerCurveChart.update();
   }
 
-  // Helper function to format power values
+  // Helper function to format power values in W, kW, or MW
   function formatPower(watts) {
     if (watts >= 1000000) {
       return fmt(watts / 1000000, 2) + " MW";
