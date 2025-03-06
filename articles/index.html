@@ -23,37 +23,43 @@
         <div class="header-nav">
           <a href="/" class="back-button">
             <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
-              viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              viewBox="0 0 24 24"
             >
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h14M5 12l4-4m-4 4 4 4"
+              />
             </svg>
-            <span>Magazine</span>
+            <span>Retour</span>
           </a>
           <div class="reading-time">
             <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
-              viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              viewBox="0 0 24 24"
             >
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+              />
             </svg>
-            <span>12 min read</span>
+            <span>10 mars 2025</span>
           </div>
         </div>
 
@@ -74,19 +80,45 @@
                 <path
                   d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2"
                 ></path>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <line
+                  x1="2"
+                  y1="12"
+                  x2="22"
+                  y2="12"
+                  style="transform: translateY(0.4px)"
+                ></line>
               </svg>
             </span>
           </div>
-          <h1 class="article-main-title">Powering Tomorrow</h1>
+          <h1 class="article-main-title">Alimenter Demain</h1>
           <h2 class="article-subtitle">
-            The Renewable Revolution Reshaping Our Energy Landscape
+            La révolution des énergies renouvelables qui redessine notre paysage
+            énergétique
           </h2>
           <div class="article-meta">
             <div class="article-category">
-              <span class="category-tag">SUSTAINABILITY</span>
+              <span class="category-tag">DURABILITÉ</span>
             </div>
-            <div class="article-date">October 15, 2023</div>
+            <div class="reading-time">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              Lecture : 12 min
+            </div>
           </div>
         </div>
       </div>
@@ -103,37 +135,37 @@
               alt="Wind turbines on green hills"
             />
             <p class="image-caption">
-              The quiet revolution: Wind turbines dotting the landscape in rural
-              Denmark
+              La révolution silencieuse : des éoliennes parsèment le paysage de
+              la campagne danoise
             </p>
           </div>
 
           <!-- Elegant Table of Contents -->
           <div class="toc-container">
             <div class="toc-header">
-              <div class="toc-title">Contents</div>
+              <div class="toc-title">Sommaire</div>
               <div class="toc-line"></div>
             </div>
             <div class="toc-grid">
               <a href="#vision" class="toc-item">
                 <span class="toc-number">01</span>
-                <span class="toc-text">The 2050 Vision</span>
+                <span class="toc-text">La vision 2050</span>
               </a>
               <a href="#transformation" class="toc-item">
                 <span class="toc-number">02</span>
-                <span class="toc-text">Energy Transformation</span>
+                <span class="toc-text">Transformation énergétique</span>
               </a>
               <a href="#breakthroughs" class="toc-item">
                 <span class="toc-number">03</span>
-                <span class="toc-text">Recent Breakthroughs</span>
+                <span class="toc-text">Percées récentes</span>
               </a>
               <a href="#obstacles" class="toc-item">
                 <span class="toc-number">04</span>
-                <span class="toc-text">Overcoming Obstacles</span>
+                <span class="toc-text">Surmonter les obstacles</span>
               </a>
               <a href="#future" class="toc-item">
                 <span class="toc-number">05</span>
-                <span class="toc-text">The Road Ahead</span>
+                <span class="toc-text">La route à venir</span>
               </a>
             </div>
           </div>
@@ -141,26 +173,28 @@
           <!-- Article opener - First paragraph with drop cap -->
           <div class="article-opener">
             <p>
-              <span class="drop-cap">T</span>he hum of electricity powers our
-              modern world, but for centuries, that hum has come at an
-              increasingly unsustainable cost. We now stand at a pivotal moment
-              in human history, where the decisions we make about energy will
-              echo across generations. The renewable revolution isn't just
-              reshaping how we power our homes and businesses—it's fundamentally
-              rewriting the relationship between humanity and the planet we
-              inhabit.
+              <span class="drop-cap">L</span>e bourdonnement de l'électricité
+              alimente notre monde moderne, mais pendant des siècles, ce
+              bourdonnement a eu un coût de plus en plus insoutenable. Nous
+              sommes à un moment charnière de l'histoire humaine, où les
+              décisions que nous prenons concernant l'énergie résonneront à
+              travers les générations. La révolution des énergies renouvelables
+              ne redéfinit pas seulement la manière d'alimenter nos foyers et
+              nos entreprises—elle réécrit fondamentalement la relation entre
+              l'humanité et la planète que nous habitons.
             </p>
           </div>
 
           <!-- Article sections -->
           <section id="vision">
-            <h2>The 2050 Vision</h2>
+            <h2>La vision 2050</h2>
             <p>
-              Imagine walking through a city in 2050. The skyline is dotted with
-              buildings whose surfaces generate electricity. Parks are
-              punctuated with sculptural wind turbines that turn gracefully in
-              the breeze. Underground, massive batteries store energy from the
-              previous day's sunshine, keeping the lights on through the night.
+              Imaginez-vous traverser une ville en 2050. La silhouette urbaine
+              est parsemée de bâtiments dont les surfaces génèrent de
+              l'électricité. Les parcs sont ponctués d'éoliennes sculpturales
+              qui tournent gracieusement dans la brise. Sous terre, d'immenses
+              batteries stockent l'énergie du soleil de la veille, assurant
+              l'éclairage durant la nuit.
             </p>
 
             <div class="stat-box">
@@ -168,40 +202,45 @@
                 <div class="stat-item">
                   <div class="stat-number">90%</div>
                   <div class="stat-description">
-                    Reduction in renewable energy costs since 2010
+                    Réduction des coûts des énergies renouvelables depuis 2010
                   </div>
                 </div>
                 <div class="stat-item">
                   <div class="stat-number">38%</div>
                   <div class="stat-description">
-                    Of global electricity came from renewables in 2022
+                    De l'électricité mondiale provenait des énergies
+                    renouvelables en 2022
                   </div>
                 </div>
                 <div class="stat-item">
                   <div class="stat-number">$1.8T</div>
                   <div class="stat-description">
-                    Expected investment in renewables by 2030
+                    Investissement prévu dans les énergies renouvelables d'ici
+                    2030
                   </div>
                 </div>
               </div>
             </div>
 
             <p>
-              This isn't science fiction—it's a future that's already being
-              built. The International Energy Agency's Net Zero by 2050 roadmap
-              outlines how renewables could supply 90% of global electricity by
-              mid-century. What once seemed implausible is now viewed as
-              inevitable by energy analysts worldwide.
+              Ce n'est pas de la science-fiction—c'est un futur qui se construit
+              déjà. La feuille de route de l'Agence internationale de l'énergie
+              pour atteindre la neutralité carbone d'ici 2050 décrit comment les
+              énergies renouvelables pourraient fournir 90 % de l'électricité
+              mondiale d'ici le milieu du siècle. Ce qui paraissait autrefois
+              improbable est désormais considéré comme inévitable par les
+              analystes énergétiques du monde entier.
             </p>
           </section>
 
           <section id="transformation">
-            <h2>Energy Transformation</h2>
+            <h2>Transformation énergétique</h2>
             <p>
-              The landscapes of energy production are undergoing radical
-              transformation. Deserts that once seemed like barren wastelands
-              now host vast solar arrays, capturing the abundant sunshine that
-              has fallen unused for millennia.
+              Les paysages de la production d'énergie subissent une
+              transformation radicale. Des déserts qui ressemblaient autrefois à
+              des terres désolées abritent désormais d'immenses parcs solaires,
+              captant le soleil abondant qui, depuis des millénaires, restait
+              inexploité.
             </p>
 
             <div class="article-image">
@@ -210,26 +249,31 @@
                 alt="Vast solar farm in the desert"
               />
               <p class="image-caption">
-                The Noor Complex in Morocco: One of the world's largest
-                concentrated solar power plants
+                Le complexe Noor au Maroc : l'une des plus grandes centrales
+                solaires à concentration au monde
               </p>
             </div>
 
             <div class="quote-box">
               <blockquote>
-                "The stone age didn't end because we ran out of stones. The oil
-                age won't end because we run out of oil."
-                <cite>— Sheikh Zaki Yamani, Former Saudi Oil Minister</cite>
+                "L'âge de pierre n'a pas pris fin parce que nous manquions de
+                pierres. L'ère du pétrole ne prendra pas fin parce que nous
+                manquerons de pétrole."
+                <cite
+                  >— Sheikh Zaki Yamani, ancien ministre du Pétrole
+                  saoudien</cite
+                >
               </blockquote>
             </div>
 
             <p>
-              Coastal nations are turning to their seas, not just for fish and
-              transportation, but for energy. The UK's Dogger Bank Wind Farm,
-              when completed, will be the world's largest offshore wind farm,
-              capable of powering 6 million homes. Meanwhile, Portugal and
-              Scotland are pioneering wave and tidal energy technologies that
-              harness the rhythmic power of the ocean.
+              Les nations côtières se tournent vers leurs mers, non seulement
+              pour la pêche et le transport, mais aussi pour l'énergie. Le parc
+              éolien offshore Dogger Bank du Royaume-Uni, une fois terminé, sera
+              le plus grand parc éolien en mer du monde, capable d'alimenter 6
+              millions de foyers. Par ailleurs, le Portugal et l'Écosse innovent
+              dans les technologies de l'énergie des vagues et des marées qui
+              exploitent la puissance rythmée de l'océan.
             </p>
 
             <div class="info-callout">
@@ -251,54 +295,59 @@
                 </svg>
               </div>
               <div class="callout-content">
-                <h4>Did You Know?</h4>
+                <h4>Le saviez-vous ?</h4>
                 <p>
-                  The amount of solar energy that reaches Earth's surface in
-                  just one hour exceeds the world's total energy consumption for
-                  an entire year.
+                  La quantité d'énergie solaire qui atteint la surface de la
+                  Terre en une seule heure dépasse la consommation énergétique
+                  totale du monde pour une année entière.
                 </p>
               </div>
             </div>
           </section>
 
           <section id="breakthroughs">
-            <h2>Recent Breakthroughs</h2>
+            <h2>Percées récentes</h2>
             <p>
-              Innovation in renewable energy is accelerating at a pace that
-              would have been unimaginable just a decade ago. Here are some of
-              the most promising breakthroughs reshaping the field:
+              L'innovation dans le domaine des énergies renouvelables s'accélère
+              à un rythme qui aurait été inimaginable il y a seulement une
+              décennie. Voici quelques-unes des percées les plus prometteuses
+              qui redéfinissent ce secteur :
             </p>
 
             <div class="breakthrough-cards">
               <div class="breakthrough-card">
-                <h3>Perovskite Solar Cells</h3>
+                <h3>Panneaux solaires à pérovskite</h3>
                 <p>
-                  These next-generation solar cells could potentially double the
-                  efficiency of current photovoltaics while reducing
-                  manufacturing costs dramatically. Recent lab tests have
-                  achieved 29.1% efficiency—approaching the theoretical limit of
-                  silicon cells.
+                  Ces cellules solaires de nouvelle génération pourraient
+                  potentiellement doubler l'efficacité des photovoltaïques
+                  actuels tout en réduisant considérablement les coûts de
+                  fabrication. Des tests en laboratoire récents ont atteint une
+                  efficacité de 29,1 %—frôlant la limite théorique des cellules
+                  en silicium.
                 </p>
               </div>
 
               <div class="breakthrough-card">
-                <h3>Floating Wind Farms</h3>
+                <h3>Parcs éoliens flottants</h3>
                 <p>
-                  By moving turbines offshore and onto floating platforms, we
-                  can access stronger, more consistent winds while avoiding
-                  land-use conflicts. Norway's Hywind Scotland was the world's
-                  first floating wind farm and has achieved capacity factors
-                  exceeding 55%—far above the industry average.
+                  En déplaçant les turbines en mer et sur des plateformes
+                  flottantes, nous pouvons accéder à des vents plus forts et
+                  plus constants tout en évitant les conflits liés à
+                  l'utilisation des terres. Hywind Scotland, en Norvège, fut le
+                  premier parc éolien flottant au monde et a atteint des
+                  facteurs de capacité dépassant 55 %—bien au-dessus de la
+                  moyenne de l'industrie.
                 </p>
               </div>
 
               <div class="breakthrough-card">
-                <h3>Advanced Grid-Scale Storage</h3>
+                <h3>Stockage avancé à l'échelle du réseau</h3>
                 <p>
-                  Flow batteries, compressed air energy storage, and liquid
-                  metal batteries are emerging as alternatives to lithium-ion,
-                  offering longer duration storage with reduced fire risk and
-                  fewer raw material constraints.
+                  Les batteries à flux, le stockage d'énergie par air comprimé
+                  et les batteries à métal liquide émergent en tant
+                  qu'alternatives aux batteries lithium-ion, offrant un stockage
+                  de plus longue durée avec un risque d'incendie réduit et moins
+                  de contraintes en matières premières.
                 </p>
               </div>
             </div>
@@ -309,25 +358,26 @@
                 alt="Modern wind turbines"
               />
               <p class="image-caption">
-                Floating wind turbines can be deployed in deep waters where
-                winds are stronger and more consistent
+                Les éoliennes flottantes peuvent être déployées en eaux
+                profondes où les vents sont plus forts et plus constants
               </p>
             </div>
           </section>
 
           <section id="obstacles">
-            <h2>Overcoming Obstacles</h2>
+            <h2>Surmonter les obstacles</h2>
             <p>
-              Despite remarkable progress, the path to a renewable future isn't
-              without challenges. Addressing these obstacles requires innovation
-              not just in technology, but in policy, finance, and social
-              systems.
+              Malgré des progrès remarquables, le chemin vers un futur
+              renouvelable n'est pas exempt de défis. Relever ces obstacles
+              nécessite une innovation non seulement technologique, mais aussi
+              dans les domaines de la politique, des finances et des systèmes
+              sociaux.
             </p>
 
             <div class="challenges-container">
               <div class="challenge-item">
                 <div class="challenge-header">
-                  <h3>Intermittency</h3>
+                  <h3>Intermittence</h3>
                   <div class="challenge-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -352,15 +402,16 @@
                   </div>
                 </div>
                 <p>
-                  Wind doesn't always blow and sun doesn't always shine.
-                  Long-duration energy storage and advanced forecasting
-                  technologies are critical to managing this variability.
+                  Le vent ne souffle pas toujours et le soleil ne brille pas
+                  constamment. Un stockage d'énergie de longue durée et des
+                  technologies de prévision avancées sont essentiels pour gérer
+                  cette variabilité.
                 </p>
               </div>
 
               <div class="challenge-item">
                 <div class="challenge-header">
-                  <h3>Infrastructure Needs</h3>
+                  <h3>Besoins en infrastructure</h3>
                   <div class="challenge-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -388,16 +439,17 @@
                   </div>
                 </div>
                 <p>
-                  Our electrical grids weren't designed for decentralized,
-                  variable generation. Upgrading transmission infrastructure and
-                  implementing smart grid technologies requires massive
-                  investment.
+                  Nos réseaux électriques n'ont pas été conçus pour une
+                  production décentralisée et variable. La modernisation des
+                  infrastructures de transmission et la mise en place de
+                  technologies de réseaux intelligents nécessitent des
+                  investissements massifs.
                 </p>
               </div>
 
               <div class="challenge-item">
                 <div class="challenge-header">
-                  <h3>Material Constraints</h3>
+                  <h3>Contraintes matérielles</h3>
                   <div class="challenge-icon">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -415,69 +467,77 @@
                   </div>
                 </div>
                 <p>
-                  Renewable technologies require specific minerals—lithium for
-                  batteries, rare earth elements for turbines. Sustainable
-                  sourcing and recycling of these materials is crucial.
+                  Les technologies renouvelables nécessitent des minéraux
+                  spécifiques—le lithium pour les batteries, les terres rares
+                  pour les turbines. Un approvisionnement durable et le
+                  recyclage de ces matériaux sont cruciaux.
                 </p>
               </div>
             </div>
 
             <p>
-              Germany's Energiewende (energy transition) offers valuable
-              lessons. Their early adoption of renewables encountered challenges
-              with grid management and costs, but ultimately drove global price
-              reductions in solar and wind technologies that benefit all nations
-              today.
+              L'Energiewende de l'Allemagne (transition énergétique) offre des
+              leçons précieuses. Leur adoption précoce des énergies
+              renouvelables a rencontré des défis en matière de gestion des
+              réseaux et de coûts, mais a finalement entraîné une baisse des
+              prix mondiaux des technologies solaires et éoliennes qui profitent
+              à toutes les nations aujourd'hui.
             </p>
           </section>
 
           <section id="future">
-            <h2>The Road Ahead</h2>
+            <h2>La route à venir</h2>
             <p>
-              The renewable revolution isn't just about substituting one energy
-              source for another—it's about reimagining our entire relationship
-              with energy. This transition creates opportunities for more
-              resilient, equitable energy systems that democratize production
-              and consumption.
+              La révolution des énergies renouvelables ne consiste pas
+              simplement à substituer une source d'énergie à une autre—il s'agit
+              de repenser entièrement notre relation avec l'énergie. Cette
+              transition crée des opportunités pour des systèmes énergétiques
+              plus résilients et équitables, démocratisant la production et la
+              consommation.
             </p>
 
             <div class="future-vision">
               <div class="future-vision-bg"></div>
               <div class="future-vision-content">
-                <h3>Energy Democracy</h3>
+                <h3>Démocratie énergétique</h3>
                 <p>
-                  Communities from Brooklyn to Bangladesh are forming energy
-                  cooperatives, taking ownership of their energy production
-                  through rooftop solar, community wind projects, and
-                  microgrids. This shift from centralized to distributed
-                  generation doesn't just reduce emissions—it builds resilience
-                  and keeps energy dollars circulating locally.
+                  Des communautés, de Brooklyn au Bangladesh, forment des
+                  coopératives énergétiques, prenant en main leur production
+                  d'énergie grâce à des panneaux solaires sur les toits, des
+                  projets éoliens communautaires et des micro-réseaux. Ce
+                  passage d'une production centralisée à une production
+                  distribuée ne se contente pas de réduire les émissions—il
+                  renforce la résilience et maintient la circulation locale des
+                  investissements énergétiques.
                 </p>
               </div>
             </div>
 
             <p>
-              As developing nations build out their energy infrastructure, they
-              have the opportunity to leapfrog fossil fuel dependency entirely.
-              Kenya already gets over 90% of its electricity from renewables,
-              while Vietnam has become one of the world's fastest-growing solar
-              markets.
+              Alors que les pays en développement développent leur
+              infrastructure énergétique, ils ont l'opportunité de dépasser
+              totalement la dépendance aux combustibles fossiles. Le Kenya tire
+              déjà plus de 90 % de son électricité des énergies renouvelables,
+              tandis que le Vietnam est devenu l'un des marchés solaires
+              connaissant la croissance la plus rapide au monde.
             </p>
 
             <div class="concluding-thoughts">
               <p>
-                The path to a renewable future isn't a straight line. It will
-                require persistence, innovation, and collaboration across
-                borders and sectors. But for the first time in human history, we
-                can envision an energy system that doesn't deplete our planet's
-                resources or destabilize its climate.
+                Le chemin vers un futur renouvelable n'est pas linéaire. Il
+                exigera persévérance, innovation et collaboration au-delà des
+                frontières et entre les secteurs. Mais pour la première fois
+                dans l'histoire de l'humanité, nous pouvons envisager un système
+                énergétique qui n'épuise pas les ressources de notre planète ni
+                ne déstabilise son climat.
               </p>
               <p>
-                This isn't just about avoiding catastrophe—it's about creating
-                something better. A world powered by renewables could be
-                cleaner, healthier, more equitable, and more peaceful. The
-                technology exists. The economics increasingly favor it. Now we
-                need the will to make it happen.
+                Il ne s'agit pas seulement d'éviter une catastrophe—il s'agit de
+                créer quelque chose de meilleur. Un monde alimenté par les
+                énergies renouvelables pourrait être plus propre, plus sain,
+                plus équitable et plus pacifique. La technologie existe.
+                L'économie y est de plus en plus favorable. Il nous faut
+                désormais la volonté de le réaliser.
               </p>
             </div>
           </section>
@@ -492,17 +552,14 @@
           <div class="author-info">
             <div class="author-image">
               <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+                src="https://careers.recruiteecdn.com/image/upload/q_auto,f_auto,w_1920,c_limit/production/images/BgNo/O-zt_Pq2BWJY.png"
                 alt="Author portrait"
               />
             </div>
+            <span class="vertical"></span>
             <div class="author-details">
-              <h3>Alex Morgan</h3>
-              <p>
-                Energy correspondent with a decade of experience covering the
-                transition to renewables. Previously at Climate Home News and
-                The Guardian.
-              </p>
+              <p>Jeanne Audigier, Pierre-Louis Camaret, Léo Youssefi</p>
+              <p class="group-info">CapECL, Groupe 10</p>
             </div>
           </div>
           <button id="back-to-top" class="back-to-top">
@@ -520,7 +577,7 @@
               <line x1="12" y1="19" x2="12" y2="5"></line>
               <polyline points="5 12 12 5 19 12"></polyline>
             </svg>
-            <span>Back to Top</span>
+            <span>Retour en haut</span>
           </button>
         </div>
       </div>

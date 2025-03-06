@@ -92,8 +92,8 @@ img {
 }
 
 .back-button svg {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
 }
 
 .reading-time {
@@ -151,12 +151,12 @@ img {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background-color: #f0e9df;
-  box-shadow: 0 0 0 8px rgba(240, 233, 223, 0.5);
+  background-color: #eee8dd;
+  box-shadow: 0 0 0 8px rgba(240, 233, 223, 0.6);
 }
 
 .title-icon svg {
-  color: #000;
+  color: #383838;
 }
 
 .article-main-title {
@@ -199,7 +199,7 @@ img {
   letter-spacing: 1px;
 }
 
-.article-date {
+.reading-time {
   font-size: 0.875rem;
   color: #666;
 }
@@ -721,9 +721,8 @@ section li {
 }
 
 .author-image {
-  width: 64px;
+  width: 156px;
   height: 64px;
-  border-radius: 50%;
   overflow: hidden;
   margin-right: 1rem;
   flex-shrink: 0;
@@ -735,17 +734,22 @@ section li {
   object-fit: cover;
 }
 
-.author-details h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #000;
-}
-
 .author-details p {
   margin: 0;
   font-size: 0.85rem;
   max-width: 350px;
+}
+
+.author-details p.group-info {
+  font-weight: 500;
+  color: #777;
+}
+
+.vertical {
+  border-left: #777 1px solid;
+  height: 100%;
+  margin: 0 1rem 0 0;
+  height: 64px;
 }
 
 /* Responsive adjustments */
