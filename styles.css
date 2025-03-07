@@ -128,6 +128,7 @@ img {
 }
 
 .header-link--button {
+  display: flex;
   background-color: #000;
   color: #fff;
   padding: 0.5rem 1rem;
@@ -144,6 +145,10 @@ img {
 
 .btn-icon svg {
   transform: translateY(2px);
+}
+
+.test-button {
+  margin: 0 !important;
 }
 
 @media (min-width: 768px) {
