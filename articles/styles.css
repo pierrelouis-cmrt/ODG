@@ -406,10 +406,6 @@ section li {
     gap: 1.5rem;
     text-align: center;
   }
-
-  .back-to-top span {
-    display: none;
-  }
 }
 
 /* Table of Contents Styles */
@@ -783,5 +779,9 @@ section li {
 
   .author-details p {
     max-width: 100%;
+  }
+
+  .vertical {
+    display: none;
   }
 }
