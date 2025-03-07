@@ -144,6 +144,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let powerOutput = 0;
     let windState = "";
 
+    // Calcul de la puissance nominale (en kW)
+    const ratedTheoreticalPower =
+      0.5 * airDensity * sweptArea * Math.pow(ratedWindSpeed, 3);
+    const powerRated = (ratedTheoreticalPower * efficiencyFactor) / 1000;
+
     if (windSpeed < cutInSpeed) {
       windState =
         "<div class='wind-state too-slow'>Statut: <b>Non opérationnelle</b> " +
@@ -160,20 +165,11 @@ document.addEventListener("DOMContentLoaded", function () {
         "<span class='wind-speed-badge operational'>• Conditions optimales</span></div>";
 
       if (windSpeed >= cutInSpeed && windSpeed < ratedWindSpeed) {
-        // Compute normalized value (0 to 1)
+        // Interpolation cubique pour refléter l'évolution en v^3
         let x = (windSpeed - cutInSpeed) / (ratedWindSpeed - cutInSpeed);
-        // Theoretical power at rated wind speed
-        const ratedTheoreticalPower =
-          0.5 * airDensity * sweptArea * Math.pow(ratedWindSpeed, 3);
-        // S-curve interpolation (smooth start)
-        powerOutput =
-          ratedTheoreticalPower *
-          (3 * Math.pow(x, 2) - 2 * Math.pow(x, 3)) *
-          efficiencyFactor;
+        powerOutput = powerRated * Math.pow(x, 3);
       } else if (windSpeed >= ratedWindSpeed && windSpeed <= cutOutSpeed) {
-        const ratedTheoreticalPower =
-          0.5 * airDensity * sweptArea * Math.pow(ratedWindSpeed, 3);
-        powerOutput = ratedTheoreticalPower * efficiencyFactor;
+        powerOutput = powerRated;
       }
     }
 
@@ -201,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "$$P_{\\mathrm{élec}} = 0 \\ \\text{W (Éolienne non opérationnelle)}$$";
     }
 
-    // Update charts, passing the rated wind speed from the text input
+    // Update charts
     updateCharts(
       cutInSpeed,
       cutOutSpeed,
@@ -230,13 +226,25 @@ document.addEventListener("DOMContentLoaded", function () {
       data: {
         labels: [],
         datasets: [
+          // Courbe de la puissance électrique de l'éolienne (mise en avant)
           {
             label: "Puissance électrique produite (kW)",
             data: [],
             borderColor: "#3498db",
             backgroundColor: "rgba(52, 152, 219, 0.1)",
-            borderWidth: 2,
+            borderWidth: 3,
             fill: true,
+            tension: 0.1,
+          },
+          // Courbe secondaire de la puissance de vent (re-scalée)
+          {
+            label: "Puissance théorique du vent (kW)",
+            data: [],
+            borderColor: "#e74c3c",
+            backgroundColor: "rgba(231, 76, 60, 0.1)",
+            borderWidth: 1,
+            borderDash: [5, 5],
+            fill: false,
             tension: 0.1,
           },
         ],
@@ -250,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
             beginAtZero: true,
             title: {
               display: true,
-              text: "Puissance électrique produite (kW)",
+              text: "Puissance (kW)",
             },
           },
           x: {
@@ -273,26 +281,49 @@ document.addEventListener("DOMContentLoaded", function () {
     airDensity,
     bladeLength
   ) {
-    // Create an array for wind speeds 0 to 30 m/s
+    // Crée un tableau pour les vitesses de vent de 0 à 30 m/s
     const windSpeeds = Array.from({ length: 31 }, (_, i) => i);
     const sweptArea = Math.PI * Math.pow(bladeLength, 2);
 
-    // Compute the rated power (in kW) using the rated wind speed
-    const powerRated =
-      (0.5 *
-        airDensity *
-        sweptArea *
-        Math.pow(ratedWindSpeed, 3) *
-        efficiencyFactor) /
-      1000;
+    // Calcul de la puissance nominale (en kW) à la vitesse nominale
+    const ratedTheoreticalPower =
+      0.5 * airDensity * sweptArea * Math.pow(ratedWindSpeed, 3);
+    const powerRated = (ratedTheoreticalPower * efficiencyFactor) / 1000;
 
-    // Determine power output for each wind speed using a piecewise function
-    const powerOutputs = windSpeeds.map((speed) => {
+    // Courbe de l'éolienne : interpolation cubique entre cutInSpeed et ratedWindSpeed,
+    // puis puissance nominale entre ratedWindSpeed et cutOutSpeed.
+    const turbineOutputs = windSpeeds.map((speed) => {
       if (speed < cutInSpeed) {
         return 0;
       } else if (speed >= cutInSpeed && speed < ratedWindSpeed) {
         let x = (speed - cutInSpeed) / (ratedWindSpeed - cutInSpeed);
-        return powerRated * (3 * Math.pow(x, 2) - 2 * Math.pow(x, 3));
+        return powerRated * Math.pow(x, 3);
+      } else if (speed >= ratedWindSpeed && speed <= cutOutSpeed) {
+        return powerRated;
+      } else {
+        return 0;
+      }
+    });
+
+    // Courbe de la puissance de vent (théorique), re-scalée pour rester secondaire.
+    // On normalise pour que la courbe passe de 0 à powerRated entre cutInSpeed et ratedWindSpeed.
+    const windPowerOutputs = windSpeeds.map((speed) => {
+      if (speed < cutInSpeed) {
+        return 0;
+      } else if (speed >= cutInSpeed && speed < ratedWindSpeed) {
+        let raw =
+          (0.5 *
+            airDensity *
+            sweptArea *
+            (Math.pow(speed, 3) - Math.pow(cutInSpeed, 3))) /
+          1000;
+        let rawMax =
+          (0.5 *
+            airDensity *
+            sweptArea *
+            (Math.pow(ratedWindSpeed, 3) - Math.pow(cutInSpeed, 3))) /
+          1000;
+        return (raw / rawMax) * powerRated;
       } else if (speed >= ratedWindSpeed && speed <= cutOutSpeed) {
         return powerRated;
       } else {
@@ -301,7 +332,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     powerCurveChart.data.labels = windSpeeds;
-    powerCurveChart.data.datasets[0].data = powerOutputs;
+    powerCurveChart.data.datasets[0].data = turbineOutputs; // Puissance éolienne
+    powerCurveChart.data.datasets[1].data = windPowerOutputs; // Puissance de vent re-scalée
     powerCurveChart.update();
   }
 

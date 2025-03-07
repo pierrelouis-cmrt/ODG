@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js"
+    ></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <header class="article-header">
+      <div class="responsive-wrapper">
+        <div class="header-nav">
+          <a href="../" class="back-button">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h14M5 12l4-4m-4 4 4 4"
+              />
+            </svg>
+            <span>Retour</span>
+          </a>
+          <div class="reading-time">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+              />
+            </svg>
+            <span>10 mars 2025</span>
+          </div>
+        </div>
+
+        <div class="title-container">
+          <div class="title-decoration">
+            <span class="title-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2"
+                ></path>
+                <line
+                  x1="2"
+                  y1="12"
+                  x2="22"
+                  y2="12"
+                  style="transform: translateY(0.4px)"
+                ></line>
+              </svg>
+            </span>
+          </div>
+          <h1 class="article-main-title">68 500 Éoliennes</h1>
+          <h2 class="article-subtitle">
+            Le défi titanesque de la transition énergétique française
+          </h2>
+          <div class="article-meta">
+            <div class="article-category">
+              <span class="category-tag">ARTICLE 4</span>
+            </div>
+            <div class="reading-time">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              Lecture : 7 min
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="article-content">
+      <div class="responsive-wrapper">
+        <div class="content-column">
+          <!-- Banner image -->
+          <div class="banner-image">
+            <img
+              src="https://lvdneng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2019/10/23/node_656071/41790760/public/2019/10/23/B9721349442Z.1_20191023184313_000%2BGLKEOP4HS.2-0.jpg?itok=atPCIO8n1571920554"
+              alt="Un vaste champ d'éoliennes s'étendant jusqu'à l'horizon"
+            />
+            <p class="image-caption">
+              Quand la théorie rencontre la réalité : visualisation d'un
+              minuscule fragment des 68 500 éoliennes nécessaires pour alimenter
+              la France (©lavoixdunord.fr)
+            </p>
+          </div>
+
+          <div class="toc-container">
+            <div class="toc-header">
+              <div class="toc-title">Sommaire</div>
+              <div class="toc-line"></div>
+            </div>
+            <div class="toc-grid">
+              <a href="#introduction" class="toc-item">
+                <span class="toc-number">01</span>
+                <span class="toc-text">Le résultat final</span>
+              </a>
+              <a href="#variabilite" class="toc-item">
+                <span class="toc-number">02</span>
+                <span class="toc-text">La variabilité du vent</span>
+              </a>
+              <a href="#rendement" class="toc-item">
+                <span class="toc-number">03</span>
+                <span class="toc-text">Les hypothèses optimistes</span>
+              </a>
+              <a href="#infrastructure" class="toc-item">
+                <span class="toc-number">04</span>
+                <span class="toc-text">L'enjeu de l'infrastructure</span>
+              </a>
+              <a href="#conclusion" class="toc-item">
+                <span class="toc-number">05</span>
+                <span class="toc-text">Conclusion</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article opener - First paragraph with drop cap -->
+          <div class="article-opener">
+            <p>
+              <span class="drop-cap">L</span>es grands défis de notre temps
+              nécessitent souvent des perspectives radicalement nouvelles. Face
+              à l'urgence climatique et à l'épuisement programmé des ressources
+              fossiles, l'humanité s'interroge sur la façon de réinventer son
+              approvisionnement énergétique. Une question s'impose alors
+              naturellement : serait-il possible de remplacer entièrement nos
+              sources d'énergie conventionnelles par des alternatives
+              renouvelables comme l'éolien ? Après avoir analysé en détail la
+              consommation électrique française et les capacités d'une éolienne
+              moderne, nous arrivons maintenant au moment de vérité : combien
+              d'éoliennes faudrait-il pour alimenter l'intégralité de l'Hexagone
+              ?
+            </p>
+          </div>
+
+          <!-- Article sections -->
+          <section id="introduction">
+            <h2>Le résultat final : un chiffre qui interpelle</h2>
+            <p>
+              Nos calculs précédents nous ont permis d'établir deux paramètres
+              essentiels : la puissance totale consommée par la France
+              (\(P_{\text{France}} \approx 68.5\,\text{GW}\)) et la puissance
+              électrique générée par une éolienne standard
+              (\(P_{\text{éolienne}} \approx 1.04\,\text{MW}\)). Le moment est
+              venu de déterminer combien d'éoliennes seraient nécessaires pour
+              satisfaire l'intégralité de cette demande énergétique.
+            </p>
+
+            <div class="future-vision">
+              <div class="future-vision-bg"></div>
+              <div class="future-vision-content">
+                <h3>Le calcul final</h3>
+                <p>
+                  Le nombre d'éoliennes nécessaires s'obtient simplement en
+                  divisant la puissance totale consommée par la France par la
+                  puissance produite par une seule éolienne : $$
+                  N_{\text{éoliennes}} =
+                  \frac{P_{\text{France}}}{P_{\text{éolienne}}} =
+                  \frac{68.5\,\text{GW}}{1.04\,\text{MW}} =
+                  \frac{68500\,\text{MW}}{1.04\,\text{MW}} \approx 68500 \text{
+                  éoliennes} $$ Ce chiffre représente l'équivalent d'environ 20
+                  éoliennes pour chaque commune française de plus de 3500
+                  habitants.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Pour mettre ce nombre en perspective, la France comptait environ
+              9000 éoliennes installées fin 2022. Notre estimation suggère donc
+              qu'il faudrait multiplier par plus de 7,5 le parc éolien actuel
+              pour couvrir théoriquement l'ensemble des besoins électriques du
+              pays, dans les conditions idéales que nous avons supposées.
+            </p>
+
+            <div class="quote-box">
+              <blockquote>
+                "Les nombres ont ceci de fascinant qu'ils nous confrontent à la
+                réalité brute, dépouillée de toute idéologie. 68 500 éoliennes
+                n'est ni un argument pour ni contre l'énergie éolienne — c'est
+                simplement l'échelle du défi auquel nous faisons face."
+                <cite>— Dr. Léo Youssefi</cite>
+              </blockquote>
+            </div>
+          </section>
+
+          <section id="variabilite">
+            <h2>La variabilité du vent : premier défi majeur</h2>
+            <p>
+              Notre calcul repose sur une hypothèse fondamentale qui mérite
+              d'être examinée de près : nous avons considéré une vitesse de vent
+              constante de 10 m/s. Dans la réalité, le vent est par nature
+              variable et imprévisible.
+            </p>
+
+            <div class="article-image">
+              <img
+                src="../media/Cycle-journalier-a-et-variation-intra-annuelle-de-la-vitesse-du-vent-b-la-ligne.png"
+                alt="Diagramme montrant la variabilité du vent"
+                style="max-width: min-content; margin: auto"
+              />
+              <p class="image-caption">
+                La variabilité du vent implique des périodes de production
+                maximale alternant avec des périodes de production très faible
+                ou nulle (<a
+                  href="https://www.researchgate.net/figure/Cycle-journalier-a-et-variation-intra-annuelle-de-la-vitesse-du-vent-b-la-ligne_fig5_341105531"
+                  target="_blank"
+                  class="credits"
+                  >©Souleymane Sanogo</a
+                >)
+              </p>
+            </div>
+
+            <div class="challenges-container">
+              <div class="challenge-item">
+                <div class="challenge-header">
+                  <h3>Le facteur de charge</h3>
+                  <div class="challenge-icon">
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 4v15a1 1 0 0 0 1 1h15M8 16l2.5-5.5 3 3L17.273 7 20 9.667"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <p>
+                  En France métropolitaine, le facteur de charge moyen des
+                  éoliennes (ratio entre la production réelle et la production
+                  théorique maximale) est d'environ 24%. Cela signifie que, sur
+                  une année, une éolienne produit en moyenne moins d'un quart de
+                  ce qu'elle pourrait produire si le vent soufflait constamment
+                  à sa vitesse optimale.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              En tenant compte de cette réalité, le nombre d'éoliennes
+              nécessaires pourrait être bien plus élevé. Pour compenser ce
+              facteur de charge de 24%, il faudrait théoriquement installer
+              environ 285 000 éoliennes pour assurer la consommation électrique
+              française en moyenne annuelle, un chiffre qui défie l'imagination.
+            </p>
+          </section>
+
+          <section id="rendement">
+            <h2>Des hypothèses optimistes</h2>
+            <p>
+              Notre modèle s'appuie également sur certaines hypothèses
+              techniques qui méritent d'être nuancées pour une vision plus
+              réaliste du défi.
+            </p>
+
+            <div class="breakthrough-cards">
+              <div class="breakthrough-card">
+                <h3>Rendement idéalisé</h3>
+                <p>
+                  Nous avons utilisé un rendement global de 60% pour nos
+                  éoliennes, une valeur proche de la limite théorique de Betz
+                  (59,3%). Dans la pratique, le rendement global — qui inclut
+                  les pertes aérodynamiques, mécaniques, électriques et de
+                  conversion — est généralement plus proche de 35-45%. Cette
+                  différence augmenterait encore significativement le nombre
+                  d'éoliennes nécessaires.
+                </p>
+              </div>
+
+              <div class="breakthrough-card">
+                <h3>Pertes de transmission</h3>
+                <p>
+                  Notre modèle ne prend pas en compte les pertes dans le réseau
+                  de transport et de distribution d'électricité, qui peuvent
+                  représenter 5 à 10% de l'énergie produite. Ces pertes sont
+                  d'autant plus importantes que les distances de transport sont
+                  grandes, ce qui serait inévitable avec un parc éolien aussi
+                  vaste et dispersé.
+                </p>
+              </div>
+
+              <div class="breakthrough-card">
+                <h3>Consommation homogène</h3>
+                <p>
+                  Nous avons considéré une consommation constante, alors que la
+                  demande électrique française varie considérablement selon les
+                  heures, les jours et les saisons. Les pics de consommation
+                  hivernaux, notamment, peuvent être jusqu'à 50% supérieurs à la
+                  moyenne annuelle, nécessitant soit une surcapacité de
+                  production, soit d'importantes capacités de stockage.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Ces considérations révèlent la nature idéalisée de notre modèle.
+              Dans un scénario plus réaliste, il faudrait intégrer ces facteurs
+              limitants, ce qui conduirait à un nombre d'éoliennes encore plus
+              élevé ou à la nécessité de compléter le dispositif par d'autres
+              sources d'énergie.
+            </p>
+          </section>
+
+          <section id="infrastructure">
+            <h2>L'enjeu de l'infrastructure et de l'espace</h2>
+            <p>
+              Au-delà des défis techniques, la mise en place d'un parc éolien de
+              cette ampleur soulèverait d'importants enjeux d'infrastructure,
+              d'utilisation de l'espace et d'acceptabilité sociale.
+            </p>
+
+            <div class="info-callout">
+              <div class="callout-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <div class="callout-content">
+                <h4>Empreinte territoriale</h4>
+                <p>
+                  Les éoliennes modernes sont généralement espacées de 5 à 7
+                  fois la longueur de leurs pales pour minimiser les
+                  interférences aérodynamiques. Pour des éoliennes avec des
+                  pales de 30m, cela représente un espacement d'environ
+                  150-200m. Un parc de 68 500 éoliennes nécessiterait donc une
+                  surface au sol d'environ 1 500 à 2 700 km², soit l'équivalent
+                  de 15 à 25 fois la superficie de Paris.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Cette empreinte territoriale considérable soulève plusieurs
+              questions cruciales :
+            </p>
+
+            <div class="challenges-container">
+              <div class="challenge-item">
+                <div class="challenge-header">
+                  <h3>Compétition pour l'usage des terres</h3>
+                  <div class="challenge-icon">
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 4H4m0 0v4m0-4 5 5m7-5h4m0 0v4m0-4-5 5M8 20H4m0 0v-4m0 4 5-5m7 5h4m0 0v-4m0 4-5-5"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <p>
+                  Comment répartir ces éoliennes sans empiéter excessivement sur
+                  les terres agricoles, les zones protégées ou les zones
+                  habitées ? Même si l'espace entre les éoliennes peut être
+                  utilisé pour l'agriculture, l'impact sur le paysage et les
+                  écosystèmes resterait considérable.
+                </p>
+              </div>
+
+              <div class="challenge-item">
+                <div class="challenge-header">
+                  <h3>Acceptabilité sociale</h3>
+                  <div class="challenge-icon">
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                        d="M4.5 17H4a1 1 0 0 1-1-1 3 3 0 0 1 3-3h1m0-3.05A2.5 2.5 0 1 1 9 5.5M19.5 17h.5a1 1 0 0 0 1-1 3 3 0 0 0-3-3h-1m0-3.05a2.5 2.5 0 1 0-2-4.45m.5 13.5h-7a1 1 0 0 1-1-1 3 3 0 0 1 3-3h3a3 3 0 0 1 3 3 1 1 0 0 1-1 1Zm-1-9.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <p>
+                  La multiplication des parcs éoliens suscite déjà des
+                  oppositions locales significatives. Comment obtenir l'adhésion
+                  des populations à un projet d'une telle ampleur ? Les
+                  préoccupations concernant l'impact visuel, le bruit, les
+                  effets sur la biodiversité et la valeur des propriétés
+                  représentent des défis sociopolitiques majeurs.
+                </p>
+              </div>
+
+              <div class="challenge-item">
+                <div class="challenge-header">
+                  <h3>Stabilité du réseau</h3>
+                  <div class="challenge-icon">
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M2.98755 7.97095c0-.55229.44771-1 1-1H16.9253c.5523 0 1 .44771 1 1v7.95855c0 .5522-.4477 1-1 1H3.98755c-.55229 0-1-.4478-1-1V7.97095ZM20.9129 12.9419v-1.9834c0-.5523-.4478-1-1-1h-.9876c-.5523 0-1 .4477-1 1v1.9834c0 .5523.4477 1 1 1h.9876c.5522 0 1-.4477 1-1Z"
+                      />
+                      <path
+                        stroke="currentColor"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5.9751 9.9585h8.9627v3.9834H5.9751V9.9585Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <p>
+                  Comment gérer un réseau électrique majoritairement alimenté
+                  par une source intermittente ? Les solutions de stockage à
+                  grande échelle (batteries, hydroélectricité pompée, hydrogène)
+                  ou de complémentarité avec d'autres sources d'énergie
+                  (solaire, biomasse, nucléaire) impliquent des investissements
+                  massifs supplémentaires et soulèvent leurs propres défis
+                  techniques.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="conclusion">
+            <h2>Conclusion : Au-delà des chiffres</h2>
+            <p>
+              Notre étude, même simplifiée, nous livre un enseignement
+              fondamental : remplacer intégralement le mix énergétique français
+              par l'éolien représenterait un défi colossal dont l'ampleur peut
+              être quantifiée. Les 68 500 éoliennes de notre calcul théorique —
+              ou les centaines de milliers nécessaires dans un scénario plus
+              réaliste — illustrent l'immensité de la tâche.
+            </p>
+
+            <div class="concluding-thoughts">
+              <p>
+                Ce résultat ne doit cependant pas être interprété comme un
+                argument contre l'énergie éolienne. Au contraire, il souligne
+                plutôt la nécessité d'une approche diversifiée de la transition
+                énergétique. Aucune source d'énergie unique ne peut répondre à
+                tous nos besoins de manière optimale. Un mix énergétique
+                équilibré, intégrant éolien, solaire, hydraulique, biomasse, et
+                potentiellement nucléaire, offre une voie plus réaliste vers un
+                avenir décarboné.
+              </p>
+              <p>
+                Notre exercice de modélisation met également en lumière
+                l'importance cruciale de la sobriété énergétique. Réduire notre
+                consommation totale d'énergie reste le levier le plus puissant
+                pour faciliter la transition énergétique. Chaque gigawatt
+                économisé représente des milliers d'installations en moins à
+                construire.
+              </p>
+              <p>
+                En définitive, les chiffres que nous avons calculés nous
+                invitent à une réflexion plus profonde sur nos choix collectifs.
+                La transition énergétique n'est pas seulement une question
+                technique — c'est un projet de société qui implique des
+                arbitrages complexes entre différentes valeurs et priorités. Ce
+                n'est qu'en abordant cette complexité avec lucidité que nous
+                pourrons tracer un chemin viable vers un avenir énergétique
+                durable.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer with author information and back to top button -->
+    <footer class="article-footer">
+      <div class="responsive-wrapper">
+        <div class="footer-content">
+          <div class="author-info">
+            <div class="author-image">
+              <img
+                src="https://careers.recruiteecdn.com/image/upload/q_auto,f_auto,w_1920,c_limit/production/images/BgNo/O-zt_Pq2BWJY.png"
+                alt="Author portrait"
+              />
+            </div>
+            <span class="vertical"></span>
+            <div class="author-details">
+              <p>Jeanne Audigier, Pierre-Louis Camaret, Léo Youssefi</p>
+              <p class="group-info">CapECL, Groupe 10</p>
+            </div>
+          </div>
+          <button id="back-to-top" class="back-to-top">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+            <span>Retour en haut</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

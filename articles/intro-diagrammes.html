@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <header class="article-header">
+      <div class="responsive-wrapper">
+        <div class="header-nav">
+          <a href="../" class="back-button">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h14M5 12l4-4m-4 4 4 4"
+              />
+            </svg>
+            <span>Retour</span>
+          </a>
+          <div class="reading-time">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+              />
+            </svg>
+            <span>10 mars 2025</span>
+          </div>
+        </div>
+
+        <div class="title-container">
+          <div class="title-decoration">
+            <span class="title-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2"
+                ></path>
+                <line
+                  x1="2"
+                  y1="12"
+                  x2="22"
+                  y2="12"
+                  style="transform: translateY(0.4px)"
+                ></line>
+              </svg>
+            </span>
+          </div>
+          <h1 class="article-main-title">Diagrammes de Raisonnement</h1>
+          <h2 class="article-subtitle">
+            Estimer le nombre d'éoliennes pour la France : <br />introduction &
+            schémas
+          </h2>
+          <div class="article-meta">
+            <div class="article-category">
+              <span class="category-tag">Article 1</span>
+            </div>
+            <div class="reading-time">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              Lecture : 5 min
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="article-content">
+      <div class="responsive-wrapper">
+        <div class="content-column">
+          <!-- Banner image -->
+          <div class="banner-image">
+            <img
+              src="https://protectiondesoiseaux.be/wp-content/uploads/2017/07/SA-Eolienne-Brouillard.jpg"
+              alt="Parc éolien"
+            />
+            <p class="image-caption">Parc éolien (©protectiondesoiseaux.be)</p>
+          </div>
+
+          <div class="toc-container">
+            <div class="toc-header">
+              <div class="toc-title">Sommaire</div>
+              <div class="toc-line"></div>
+            </div>
+            <div class="toc-grid">
+              <a href="#intro" class="toc-item">
+                <span class="toc-number">01</span>
+                <span class="toc-text">Introduction</span>
+              </a>
+              <a href="#diagram1" class="toc-item">
+                <span class="toc-number">02</span>
+                <span class="toc-text">Schéma global</span>
+              </a>
+              <a href="#diagram2" class="toc-item">
+                <span class="toc-number">03</span>
+                <span class="toc-text">Schéma détaillé</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article opener - Introduction -->
+          <div class="article-opener" id="intro">
+            <p>
+              <span class="drop-cap">L</span>'objectif de ce travail est
+              d'estimer – par des raisonnements d'ordres de grandeur – le nombre
+              d'éoliennes nécessaire pour alimenter entièrement la France en
+              électricité. Nous allons pour cela relier différentes données et
+              estimations. Le but est de montrer qu'avec quelques hypothèses, on
+              peut approcher le résultat attendu et comprendre ce qui influence
+              cet ordre de grandeur.
+            </p>
+            <p>
+              Ci-dessous, nous présentons deux schémas (l'un simplifié et
+              l'autre plus détaillé) illustrant la logique reliant les données
+              récoltées aux résultats numériques obtenus.
+            </p>
+          </div>
+
+          <!-- Schéma 1 -->
+          <section id="diagram1">
+            <h2>Schéma de raisonnement simplifié</h2>
+            <p>
+              Dans ce premier schéma, on voit comment la puissance totale
+              requise pour la France est mise en regard de la puissance produite
+              par une éolienne, pour aboutir au nombre d'éoliennes nécessaires.
+            </p>
+            <div class="article-image">
+              <img
+                src="../media/simplified.png"
+                alt="Schéma simplifié du raisonnement"
+              />
+              <p class="image-caption">Schéma simplifié du raisonnement</p>
+            </div>
+          </section>
+
+          <!-- Schéma 2 -->
+          <section id="diagram2">
+            <h2>Schéma de raisonnement plus détaillé</h2>
+            <p>
+              Le second diagramme creuse davantage la chaîne de calcul :
+              <em>depuis l'énergie cinétique du vent</em>, en passant par la
+              puissance du vent, le rendement de l'éolienne, la conversion
+              depuis le nucléaire (pour estimer la consommation totale), etc.
+            </p>
+            <div class="article-image">
+              <img
+                src="../media/detailed.png"
+                alt="Schéma détaillé du raisonnement"
+              />
+              <p class="image-caption">Schéma plus détaillé du raisonnement</p>
+            </div>
+
+            <hr />
+            <h3>
+              Quelques chiffres qui nous ont paru intéressants ou même étonnants
+            </h3>
+            <div class="stat-box">
+              <div class="stat-grid">
+                <div class="stat-item">
+                  <div class="stat-number">2827</div>
+                  <div class="stat-description">
+                    Aire balayée par les pales (en m²)
+                  </div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">34634</div>
+                  <div class="stat-description">Débit d'air (en kg/s)</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">1730000</div>
+                  <div class="stat-description">Puissance du vent (en W)</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer with author information and back to top button -->
+    <footer class="article-footer">
+      <div class="responsive-wrapper">
+        <div class="footer-content">
+          <div class="author-info">
+            <div class="author-image">
+              <img
+                src="https://careers.recruiteecdn.com/image/upload/q_auto,f_auto,w_1920,c_limit/production/images/BgNo/O-zt_Pq2BWJY.png"
+                alt="Author portrait"
+              />
+            </div>
+            <span class="vertical"></span>
+            <div class="author-details">
+              <p>Jeanne Audigier, Pierre-Louis Camaret, Léo Youssefi</p>
+              <p class="group-info">CapECL, Groupe 10</p>
+            </div>
+          </div>
+          <button id="back-to-top" class="back-to-top">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+            <span>Retour en haut</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -19,18 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", updateScrollProgress);
 
   // Back to top button functionality
-  const backToTopButton = document.getElementById("back-to-top");
+  document.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.getElementById("back-to-top");
 
-  if (backToTopButton) {
-    backToTopButton.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+    if (backToTopButton) {
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       });
-    });
-  } else {
-    console.error('Element with id "back-to-top" not found.');
-  }
+    } else {
+      console.error('Element with id "back-to-top" not found.');
+    }
+  });
 
   // TOC smooth scrolling
   const tocLinks = document.querySelectorAll(".toc-item");

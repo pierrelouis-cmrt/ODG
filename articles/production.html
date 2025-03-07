@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="../favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js"
+    ></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <header class="article-header">
+      <div class="responsive-wrapper">
+        <div class="header-nav">
+          <a href="../" class="back-button">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h14M5 12l4-4m-4 4 4 4"
+              />
+            </svg>
+            <span>Retour</span>
+          </a>
+          <div class="reading-time">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 10h16m-8-3V4M7 7V4m10 3V4M5 20h14a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Zm3-7h.01v.01H8V13Zm4 0h.01v.01H12V13Zm4 0h.01v.01H16V13Zm-8 4h.01v.01H8V17Zm4 0h.01v.01H12V17Zm4 0h.01v.01H16V17Z"
+              />
+            </svg>
+            <span>10 mars 2025</span>
+          </div>
+        </div>
+
+        <div class="title-container">
+          <div class="title-decoration">
+            <span class="title-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2"
+                ></path>
+                <line
+                  x1="2"
+                  y1="12"
+                  x2="22"
+                  y2="12"
+                  style="transform: translateY(0.4px)"
+                ></line>
+              </svg>
+            </span>
+          </div>
+          <h1 class="article-main-title">La Puissance du Vent</h1>
+          <h2 class="article-subtitle">
+            Comment transformer une brise en électricité : analyse technique
+            d'une éolienne moderne
+          </h2>
+          <div class="article-meta">
+            <div class="article-category">
+              <span class="category-tag">ARTICLE 3</span>
+            </div>
+            <div class="reading-time">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+              Lecture : 6 min
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main content area -->
+    <main class="article-content">
+      <div class="responsive-wrapper">
+        <div class="content-column">
+          <!-- Banner image -->
+          <div class="banner-image">
+            <img
+              src="https://www.balluff.com/images-2/containers/assets/news/newsroom/success-story-btl/newsroom-success-story-btl-3.jpg/b55e4cfc2b55fe156e1a91d60da53a32.jpg"
+              alt="Éoliennes au coucher du soleil"
+            />
+            <p class="image-caption">
+              Les géants modernes : des éoliennes de grande envergure captent
+              l'énergie cinétique du vent pour la transformer en électricité
+              propre (©balluff.com)
+            </p>
+          </div>
+
+          <div class="toc-container">
+            <div class="toc-header">
+              <div class="toc-title">Sommaire</div>
+              <div class="toc-line"></div>
+            </div>
+            <div class="toc-grid">
+              <a href="#introduction" class="toc-item">
+                <span class="toc-number">01</span>
+                <span class="toc-text">Introduction</span>
+              </a>
+              <a href="#dimensions" class="toc-item">
+                <span class="toc-number">02</span>
+                <span class="toc-text">Dimensions & caractéristiques</span>
+              </a>
+              <a href="#vent" class="toc-item">
+                <span class="toc-number">03</span>
+                <span class="toc-text">Le vent comme source d'énergie</span>
+              </a>
+              <a href="#calculs" class="toc-item">
+                <span class="toc-number">04</span>
+                <span class="toc-text">De la théorie à la pratique</span>
+              </a>
+              <a href="#puissance" class="toc-item">
+                <span class="toc-number">05</span>
+                <span class="toc-text">Puissance électrique finale</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Article opener - First paragraph with drop cap -->
+          <div class="article-opener">
+            <p>
+              <span class="drop-cap">C</span>omment une simple brise peut-elle
+              allumer des millions d'ampoules? Dans notre quête d'énergies
+              propres et renouvelables, les éoliennes représentent l'une des
+              technologies les plus visibles et emblématiques de la transition
+              énergétique. Ces structures imposantes, qui se dressent désormais
+              dans nos paysages, transforment un phénomène naturel omniprésent —
+              le vent — en électricité utilisable. Mais quels sont les principes
+              physiques et les calculs qui sous-tendent cette transformation?
+              Comment quantifier précisément l'électricité produite par une
+              éolienne moderne?
+            </p>
+          </div>
+
+          <!-- Article sections -->
+          <section id="introduction">
+            <h2>Introduction à l'analyse d'une éolienne</h2>
+            <p>
+              Lorsqu'on observe une éolienne en fonctionnement, on ne perçoit
+              que le mouvement gracieux de ses pales. Pourtant, derrière cette
+              apparente simplicité se cache un processus de conversion d'énergie
+              sophistiqué que nous pouvons quantifier avec précision grâce aux
+              lois de la physique.
+            </p>
+
+            <div class="info-callout">
+              <div class="callout-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <div class="callout-content">
+                <h4>Objectif de cette analyse</h4>
+                <p>
+                  Notre démarche vise à déterminer la puissance électrique
+                  générée par une éolienne standard en partant de ses
+                  caractéristiques physiques et des conditions de vent. Cette
+                  approche nous permettra de comprendre le potentiel réel de
+                  production d'une seule unité, essentiel pour planifier des
+                  parcs éoliens efficaces.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Pour ce faire, nous suivrons un cheminement logique: d'abord en
+              examinant les dimensions physiques d'une éolienne moderne, puis en
+              analysant l'interaction avec le vent, et enfin en calculant la
+              puissance électrique finale après application des rendements de
+              conversion.
+            </p>
+          </section>
+
+          <section id="dimensions">
+            <h2>Dimensions et caractéristiques d'une éolienne moderne</h2>
+            <p>
+              Les éoliennes terrestres modernes sont des structures imposantes
+              dont les dimensions ont considérablement augmenté au cours des
+              dernières décennies, permettant de capter davantage d'énergie
+              éolienne.
+            </p>
+
+            <div class="article-image">
+              <img
+                src="https://www.aspiravi.com/wp-content/uploads/2023/12/Belgie-1-1352x901.jpg"
+                alt="Vue de près d'une éolienne moderne"
+              />
+              <p class="image-caption">
+                Vue de près d'une éolienne moderne: avec des pales de plus 30
+                mètres, ces structures atteignent souvent la hauteur d'un
+                immeuble de 20 étages (©aspiravi.com)
+              </p>
+            </div>
+
+            <div class="future-vision">
+              <div class="future-vision-bg"></div>
+              <div class="future-vision-content">
+                <h3>Dimensions clés pour notre modèle</h3>
+                <p>
+                  Pour notre analyse, nous considérons une éolienne terrestre de
+                  taille standard avec les caractéristiques suivantes:
+                  <br /><br />
+                  • <strong>Longueur des pales:</strong> \(R = 30\,\mathrm{m}\)
+                  <br />
+                  • <strong>Hauteur totale:</strong> environ \(2 \times
+                  30\,\mathrm{m} = 60\,\mathrm{m}\) <br /><br />
+                  Bien que la hauteur totale soit un paramètre important pour
+                  l'installation et les considérations visuelles, notre calcul
+                  de puissance se concentrera principalement sur le rayon du
+                  rotor, qui détermine la surface balayée par les pales.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Il est important de noter que si les éoliennes offshore peuvent
+              atteindre des dimensions encore plus importantes (jusqu'à 100m de
+              longueur de pale pour les plus récentes), nous nous concentrons
+              ici sur un modèle terrestre standard pour notre analyse.
+            </p>
+          </section>
+
+          <section id="vent">
+            <h2>Le vent comme source d'énergie</h2>
+            <p>
+              Le vent est essentiellement de l'air en mouvement, possédant une
+              énergie cinétique que les éoliennes convertissent en électricité.
+              Les caractéristiques du vent déterminent directement la quantité
+              d'énergie disponible.
+            </p>
+
+            <div class="challenges-container">
+              <div class="challenge-item">
+                <div class="challenge-header">
+                  <h3>Plage opérationnelle</h3>
+                  <div class="challenge-icon">
+                    <svg
+                      class="w-6 h-6 text-gray-800 dark:text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3M3.22302 14C4.13247 18.008 7.71683 21 12 21c4.9706 0 9-4.0294 9-9 0-4.97056-4.0294-9-9-9-3.72916 0-6.92858 2.26806-8.29409 5.5M7 9H3V5"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <p>
+                  Les éoliennes ne fonctionnent que dans une plage de vitesses
+                  de vent spécifique:
+                  <br />
+                  • <strong>Vitesse minimale (cut-in):</strong> \(v_{\min} =
+                  3\,\mathrm{m/s}\)
+                  <br />
+                  • <strong>Vitesse maximale (cut-out):</strong> \(v_{\max} =
+                  25\,\mathrm{m/s}\) <br /><br />
+                  En dessous de la vitesse minimale, l'énergie est insuffisante
+                  pour faire tourner les pales efficacement. Au-delà de la
+                  vitesse maximale, l'éolienne est mise en drapeau (pales
+                  parallèles au vent) pour éviter les dommages structurels.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              Pour notre calcul, nous utiliserons une vitesse de vent moyenne de
+              \(v = 10\,\mathrm{m/s}\), soit environ \(36\,\mathrm{km/h}\).
+              Cette valeur représente un bon compromis entre les conditions de
+              vent faibles et fortes, et correspond à une vitesse courante dans
+              les zones où sont généralement implantées les éoliennes.
+            </p>
+
+            <div class="quote-box">
+              <blockquote>
+                "L'énergie disponible dans le vent augmente selon le cube de sa
+                vitesse. Doubler la vitesse du vent multiplie par huit la
+                puissance disponible — c'est pourquoi le choix du site
+                d'implantation est crucial pour l'efficacité d'un parc éolien."
+                <cite
+                  >— Dr. Jeanne Audigier, Laboratoire des Énergies
+                  Renouvelables</cite
+                >
+              </blockquote>
+            </div>
+          </section>
+
+          <section id="calculs">
+            <h2>De la théorie à la pratique: calculs intermédiaires</h2>
+            <p>
+              Pour déterminer la puissance électrique finale, nous devons suivre
+              une série d'étapes de calcul qui nous permettront de quantifier
+              l'énergie cinétique du vent et sa conversion en électricité.
+            </p>
+
+            <div class="breakthrough-cards">
+              <div class="breakthrough-card">
+                <h3>Aire balayée par les pales</h3>
+                <p>
+                  La première étape consiste à calculer la surface circulaire
+                  balayée par les pales en rotation. Cette aire détermine la
+                  quantité de vent "capturée" par l'éolienne: $$ A = \pi R^2
+                  \approx \pi \times 30^2 \approx 2827\,\mathrm{m^2} $$ Cette
+                  surface impressionnante, équivalente à plus d'un tiers d'un
+                  terrain de football, est la "fenêtre" à travers laquelle
+                  l'éolienne collecte l'énergie du vent.
+                </p>
+              </div>
+
+              <div class="breakthrough-card">
+                <h3>Volume d'air traversant (débit)</h3>
+                <p>
+                  Le volume d'air qui traverse cette surface chaque seconde
+                  correspond au débit volumique: $$ Q = A \times v \approx
+                  2827\,\mathrm{m^2} \times 10\,\mathrm{m/s} \approx
+                  28270\,\mathrm{m^3/s} $$ Ce débit colossal représente
+                  l'équivalent de plus de 11 piscines olympiques d'air
+                  traversant l'éolienne chaque seconde!
+                </p>
+              </div>
+
+              <div class="breakthrough-card">
+                <h3>Masse d'air en mouvement</h3>
+                <p>
+                  La masse de cet air en mouvement est calculée en utilisant la
+                  densité de l'air, qui est d'environ \(\rho \approx
+                  1.225\,\mathrm{kg/m^3}\) au niveau de la mer: $$ \dot{m} =
+                  \rho \times Q \approx 1.225 \times 28270 \approx
+                  34634\,\mathrm{kg/s} $$ Cette masse considérable, équivalente
+                  à environ 35 tonnes d'air par seconde, contient l'énergie
+                  cinétique que l'éolienne va capter.
+                </p>
+              </div>
+            </div>
+
+            <p>
+              La puissance disponible dans le vent qui traverse l'aire balayée
+              par les pales peut être calculée par la formule de l'énergie
+              cinétique. Pour un flux continu de vent, cette puissance s'exprime
+              par:
+            </p>
+
+            <p>$$ P_{\text{vent}} = \frac{1}{2} \rho A v^3 $$</p>
+
+            <p>En substituant nos valeurs:</p>
+
+            <p>
+              $$ P_{\text{vent}} = \frac{1}{2} \times 1.225 \times 900\pi \times
+              10^3 \approx 1.73\,\mathrm{MW} $$
+            </p>
+
+            <p>
+              Ce résultat montre qu'environ 1.73 mégawatts de puissance sont
+              théoriquement disponibles dans le vent traversant notre éolienne.
+            </p>
+          </section>
+
+          <section id="puissance">
+            <h2>Puissance électrique finale: le rendement en action</h2>
+            <p>
+              En pratique, aucune éolienne ne peut extraire 100% de l'énergie du
+              vent. Le rendement est limité par plusieurs facteurs, dont la
+              limite théorique de Betz qui établit qu'une éolienne ne peut
+              convertir plus de 59.3% de l'énergie cinétique du vent en énergie
+              mécanique.
+            </p>
+
+            <div class="info-callout">
+              <div class="callout-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </div>
+              <div class="callout-content">
+                <h4>Le facteur d'efficacité global</h4>
+                <p>
+                  Pour notre modèle, nous utilisons un rendement global de
+                  \(\eta = 0.6\) (60%), qui prend en compte:
+                  <br />
+                  • L'efficacité aérodynamique des pales (proche de la limite de
+                  Betz)
+                  <br />
+                  • Les pertes mécaniques dans la transmission
+                  <br />
+                  • Le rendement du générateur électrique
+                  <br />
+                  • Les pertes dans les convertisseurs électroniques
+                </p>
+              </div>
+            </div>
+
+            <p>
+              En appliquant ce rendement à la puissance disponible dans le vent,
+              nous obtenons la puissance électrique finale produite par notre
+              éolienne:
+            </p>
+
+            <p>
+              $$ P_{\text{éolienne}} = \eta \times P_{\text{vent}} \approx 0.6
+              \times 1.73\,\mathrm{MW} \approx 1.04\,\mathrm{MW} $$
+            </p>
+
+            <div class="concluding-thoughts">
+              <p>
+                Notre analyse démontre qu'une éolienne moderne avec des pales de
+                30 mètres, dans des conditions de vent de 10 m/s, peut générer
+                environ 1.04 mégawatts d'électricité. Pour mettre ce chiffre en
+                perspective, cette puissance pourrait alimenter
+                approximativement 1000 foyers européens moyens.
+              </p>
+              <p>
+                Il est important de noter que cette puissance représente une
+                valeur instantanée dans des conditions de vent spécifiques. La
+                production réelle sur une année dépendra du régime des vents du
+                site d'implantation, généralement exprimée par le "facteur de
+                charge" qui se situe typiquement entre 25% et 40% pour les
+                installations terrestres européennes.
+              </p>
+              <p>
+                Ce modèle de calcul, bien que simplifié, illustre parfaitement
+                comment les principes fondamentaux de la physique nous
+                permettent de quantifier la transformation de l'énergie éolienne
+                en électricité utilisable, contribuant ainsi à notre transition
+                vers un avenir énergétique plus propre et durable.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer with author information and back to top button -->
+    <footer class="article-footer">
+      <div class="responsive-wrapper">
+        <div class="footer-content">
+          <div class="author-info">
+            <div class="author-image">
+              <img
+                src="https://careers.recruiteecdn.com/image/upload/q_auto,f_auto,w_1920,c_limit/production/images/BgNo/O-zt_Pq2BWJY.png"
+                alt="Author portrait"
+              />
+            </div>
+            <span class="vertical"></span>
+            <div class="author-details">
+              <p>Jeanne Audigier, Pierre-Louis Camaret, Léo Youssefi</p>
+              <p class="group-info">CapECL, Groupe 10</p>
+            </div>
+          </div>
+          <button id="back-to-top" class="back-to-top">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+            <span>Retour en haut</span>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
