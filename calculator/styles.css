@@ -150,6 +150,7 @@ header h1:after {
   background-color: #000;
   color: #fff;
   padding: 0.75rem 1.25rem;
+  margin: 0.5rem 1.75rem;
   text-decoration: none;
   font-weight: 500;
   transition: transform 0.2s;
@@ -657,6 +658,9 @@ canvas {
   .wind-state {
     flex-direction: column;
     padding: 0.5rem;
+  }
+  .back-button {
+    margin: 1rem auto;
   }
 }
 
