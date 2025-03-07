@@ -450,6 +450,7 @@ section li {
   border: 1px solid rgba(0, 0, 0, 0.1);
   color: #484847;
   transition: all 0.2s ease;
+  align-items: center;
 }
 
 .toc-item:hover {

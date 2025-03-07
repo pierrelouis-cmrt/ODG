@@ -143,20 +143,26 @@ header h1:after {
   color: #484847;
 }
 
-.back {
-  position: relative;
+.back-button {
   display: flex;
-  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
   background-color: #000;
   color: #fff;
-  padding: 0.5rem 1.25rem 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   text-decoration: none;
-  align-self: flex-start;
-  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: transform 0.2s;
+  max-width: fit-content;
 }
 
-.back svg {
-  margin-right: 0.5rem;
+.back-button:hover {
+  transform: translateX(-3px);
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
 }
 
 /* -------------------- */
