@@ -424,13 +424,18 @@
             </div>
 
             <p>
-              La puissance disponible dans le vent qui traverse l'aire balayée
-              par les pales peut être calculée par la formule de l'énergie
-              cinétique. Pour un flux continu de vent, cette puissance s'exprime
-              par:
+              La puissance du vent, représentant l'énergie cinétique disponible
+              par unité de temps, se calcule en appliquant la formule de
+              l'énergie cinétique \( \frac{1}{2} m v^2 \) à une masse d'air
+              s'écoulant à travers l'aire balayée \( A \) à la vitesse \( v \).
+              En remplaçant la masse \( m \) par le débit massique \( \dot{m} =
+              \rho A v \), on obtient :
             </p>
-
-            <p>$$ P_{\text{vent}} = \frac{1}{2} \rho A v^3 $$</p>
+            <p>\[ P_{\text{vent}} = \frac{1}{2} \rho A v^3, \]</p>
+            <p>
+              ce qui illustre la dépendance cubique de la puissance par rapport
+              à la vitesse du vent.
+            </p>
 
             <p>En substituant nos valeurs:</p>
 
@@ -479,15 +484,15 @@
                   Pour notre modèle, nous utilisons un rendement global de
                   \(\eta = 0.6\) (60%), qui prend en compte:
                   <br />
-                  • L'efficacité aérodynamique des pales (proche de la limite de
-                  Betz)
+                  • L'efficacité aérodynamique des pales
                   <br />
                   • Les pertes mécaniques dans la transmission
                   <br />
                   • Le rendement du générateur électrique
-                  <br />
-                  • Les pertes dans les convertisseurs électroniques
                 </p>
+                Après quelques recherches, il s'avère que notre hypothèse de 60
+                % est en réalité assez proche de la limite théorique de Betz, ce
+                qui la rend idéale pour notre modèle.
               </div>
             </div>
 
@@ -504,11 +509,13 @@
 
             <div class="concluding-thoughts">
               <p>
-                Notre analyse démontre qu'une éolienne moderne avec des pales de
-                30 mètres, dans des conditions de vent de 10 m/s, peut générer
-                environ 1.04 mégawatts d'électricité. Pour mettre ce chiffre en
-                perspective, cette puissance pourrait alimenter
-                approximativement 1000 foyers européens moyens.
+                Notre analyse montre qu'une éolienne moderne typique à trois
+                pales, d'une hauteur de 30 mètres, peut produire environ 1,04
+                mégawatts d'électricité lorsque la vitesse du vent est de 10
+                m/s. Précisons que le nombre de pales (trois étant le standard
+                actuel) n'affecte pas nos calculs. Pour donner une idée concrète
+                de cette production, cette quantité d'électricité est suffisante
+                pour alimenter environ 1000 foyers européens moyens.
               </p>
               <p>
                 Il est important de noter que cette puissance représente une
